@@ -8,12 +8,18 @@ ul.setAttribute('style', 'display: none;');
 document.body.appendChild(ul);
 
 function click(element) {
-  var event = new MouseEvent('click', {
-    view: window,
-    bubbles: true,
-    cancelable: true
-  });
-  element.dispatchEvent(event);
+  if (typeof MouseEvent === 'function' && typeof element.dispatchEvent === 'function') {
+    var event = new MouseEvent('click', {
+      view: window,
+      bubbles: true,
+      cancelable: true
+    });
+    element.dispatchEvent(event);
+  } else {
+    var event = document.createEvent('MouseEvent');
+    event.initEvent('click', true, true);
+    element.dispatchEvent(event);
+  }
 }
 
 
