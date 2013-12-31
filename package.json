@@ -8,7 +8,7 @@
     "matches-selector": "~1.0.0"
   },
   "devDependencies": {
-    "run-browser": "~1.0.0",
+    "run-browser": "~1.1.0",
     "tape": "~2.3.2"
   },
   "scripts": {

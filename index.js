@@ -136,5 +136,6 @@ function findMatch(top, bottom, selector) {
     if (matches(bottom, selector)) return bottom;
     bottom = bottom.parentElement;
   }
+  if (bottom && matches(bottom, selector)) return bottom;
   return null;
 }

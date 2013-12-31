@@ -87,6 +87,10 @@ handle('li', 'click', function (li, e) {
 });
 ```
 
+### `handle.once(element|elements|selector, event [, capture])`
+
+Return a promise that is resolved with the event args once the event is fired.  `e.preventDefault()` is also called since it must be called within the same turn to work.
+
 ## Running Tests
 
 Tests can be easilly run locally in the browser of your choice, and have passed if it ends with `# ok`.  They are also run on testling-ci when pushed to the repository:

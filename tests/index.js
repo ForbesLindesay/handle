@@ -29,12 +29,12 @@ test('handle(element, event, function)', function (t) {
   ul.appendChild(li);
   var disposeA = handle(li, 'click', function (el, e) {
     disposeA();
-    t.equal(el, li, 'the element the event is bound to is the first argument');
+    t.equal(el, li, 'the element the event is bound to is the first argument: li');
     t.assert(typeof e.preventDefault === 'function', 'the second argument is the event args');
   });
   var disposeB = handle(ul, 'click', function (el, e) {
     disposeB();
-    t.equal(el, ul, 'the element the event is bound to is the first argument');
+    t.equal(el, ul, 'the element the event is bound to is the first argument: ul');
     t.assert(typeof e.preventDefault === 'function', 'the second argument is the event args');
     ul.removeChild(li);
   });
@@ -59,7 +59,7 @@ test('handle(elements, event, function)', function (t) {
   };
   handle(list, 'click', function (element, e) {
     ul.removeChild(element);
-    t.equal(element, list[i++], 'the element the event is bound to is the first argument');
+    t.equal(element, list[i++], 'the element the event is bound to is the first argument: list[i++]');
     t.assert(typeof e.preventDefault === 'function', 'the second argument is the event args');
   });
   click(liA);
@@ -69,16 +69,52 @@ test('handle(elements, event, function)', function (t) {
 
 test('handle(selector, event, function)', function (t) {
   t.plan(4);
-  handle('ul', 'click', function (element, e) {
-    t.assert(element === ul, 'the element the event is bound to is the first argument');
+  var disposeA = handle('ul', 'click', function (element, e) {
+    t.assert(element === ul, 'the element the event is bound to is the first argument: "ul"');
     t.assert(typeof e.preventDefault === 'function', 'the second argument is the event args');
+    disposeA();
   });
-  handle('ul > li', 'click', function (element, e) {
-    t.assert(element === li, 'the element the event is bound to is the first argument');
+  var disposeB = handle('ul > li', 'click', function (element, e) {
+    t.assert(element === li, 'the element the event is bound to is the first argument: "ul > li"');
     t.assert(typeof e.preventDefault === 'function', 'the second argument is the event args');
+    ul.removeChild(element);
+    disposeB();
   });
   
   var li = document.createElement('li');
   ul.appendChild(li);
+  click(li);
+});
+
+test('handle.on(top)(selector, event, function)', function (t) {
+  t.plan(4);
+  var li = document.createElement('li');
+  ul.appendChild(li);
+  var h = handle.on(li);
+  h('ul', 'click', function (element, e) {
+    t.fail('Should not have been triggered on the ul');
+  });
+  h('ul > li', 'click', function (element, e) {
+    t.assert(element === li, 'the element the event is bound to is the first argument: "ul > li"');
+    t.assert(typeof e.preventDefault === 'function', 'the second argument is the event args');
+  });
+  h('ul > li > button', 'click', function (element, e) {
+    t.assert(element === btn, 'the element the event is bound to is the first argument: "ul > li > button"');
+    t.assert(typeof e.preventDefault === 'function', 'the second argument is the event args');
+    ul.removeChild(li);
+  });
+
+  var btn = document.createElement('button');
+  li.appendChild(btn);
+  click(btn);
+});
+
+test('handle.once(element, event) => Promise(e)', function (t) {
+  t.plan(1);
+  var li = document.createElement('li');
+  ul.appendChild(li);
+  handle.once(li, 'click').done(function (e) {
+    t.assert(typeof e.preventDefault === 'function', 'the fulfilled value is the event args');
+  });
   click(li);
 });
