@@ -28,7 +28,6 @@
       "chrome/30.0",
       "chrome/31.0",
       "chrome/canary",
-      "firefox/4.0",
       "firefox/10.0",
       "firefox/15.0",
       "firefox/20.0",
@@ -41,8 +40,6 @@
       "opera/11.0",
       "opera/17.0",
       "opera/next",
-      "safari/5.0.5",
-      "safari/5.1",
       "safari/6.0",
       "iphone/6.0",
       "ipad/6.0"
