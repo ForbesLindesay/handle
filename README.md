@@ -5,7 +5,7 @@ Handle events on elements
 [![Dependency Status](https://gemnasium.com/ForbesLindesay/handle.png)](https://gemnasium.com/ForbesLindesay/handle)
 [![NPM version](https://badge.fury.io/js/handle.png)](http://badge.fury.io/js/handle)
 
-[![browser support](https://ci.testling.com/ForbesLindesay/matches-selector.png)](https://ci.testling.com/ForbesLindesay/matches-selector)
+[![browser support](https://ci.testling.com/ForbesLindesay/handle.png)](https://ci.testling.com/ForbesLindesay/handle)
 
 ## Installation
 
