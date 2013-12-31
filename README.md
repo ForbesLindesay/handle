@@ -2,9 +2,10 @@
 
 Handle events on elements
 
-[![Build Status](https://travis-ci.org/ForbesLindesay/handle.png?branch=master)](https://travis-ci.org/ForbesLindesay/handle)
 [![Dependency Status](https://gemnasium.com/ForbesLindesay/handle.png)](https://gemnasium.com/ForbesLindesay/handle)
 [![NPM version](https://badge.fury.io/js/handle.png)](http://badge.fury.io/js/handle)
+
+[![browser support](https://ci.testling.com/ForbesLindesay/matches-selector.png)](https://ci.testling.com/ForbesLindesay/matches-selector)
 
 ## Installation
 
@@ -84,6 +85,15 @@ handle('li', 'click', function (li, e) {
   e.preventDefault();
   li.style.visibility = 'hidden';
 });
+```
+
+## Running Tests
+
+Tests can be easilly run locally in the browser of your choice, and have passed if it ends with `# ok`.  They are also run on testling-ci when pushed to the repository:
+
+```
+npm install
+npm test
 ```
 
 ## License
