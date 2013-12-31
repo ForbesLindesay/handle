@@ -23,9 +23,8 @@
   "testling": {
     "files": "tests/index.js",
     "browsers": [
-      "iexplore/8.0",
-      "iexplore/10.0",
       "iexplore/9.0",
+      "iexplore/10.0",
       "chrome/30.0",
       "chrome/31.0",
       "chrome/canary",
