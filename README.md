@@ -2,8 +2,8 @@
 
 Handle events on elements
 
-[![Dependency Status](https://img.shields.io/gemnasium/ForbesLindesay/handle.svg)](https://gemnasium.com/ForbesLindesay/handle)
-[![NPM version](https://img.shields.io/npm/v/handle.svg)](http://badge.fury.io/js/handle)
+[![Dependency Status](https://img.shields.io/david/ForbesLindesay/handle.svg)](https://david-dm.org/ForbesLindesay/handle)
+[![NPM version](https://img.shields.io/npm/v/handle.svg)](https://www.npmjs.com/package/handle)
 
 [![browser support](https://ci.testling.com/ForbesLindesay/handle.png)](https://ci.testling.com/ForbesLindesay/handle)
 
