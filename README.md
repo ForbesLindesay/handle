@@ -1,5 +1,7 @@
 # handle
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/ForbesLindesay/handle.svg)](https://greenkeeper.io/)
+
 Handle events on elements
 
 [![Dependency Status](https://img.shields.io/david/ForbesLindesay/handle.svg)](https://david-dm.org/ForbesLindesay/handle)
